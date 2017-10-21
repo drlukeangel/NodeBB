@@ -1,3 +1,7 @@
+This is not the real NodeBB repo for the real repo go here 
+https://github.com/NodeBB/NodeBB
+
+
 # <img alt="NodeBB" src="http://i.imgur.com/mYxPPtB.png" />
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/NodeBB/NodeBB?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
