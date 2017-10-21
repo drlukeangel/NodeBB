@@ -14,6 +14,7 @@
 # 5) start the container again 
 #    cmd ->  docker start myNodeBB
 # 6) Finished!  Go to localhost:4567 and have fun using nodeBB   
+
 #--------------------- 
 # other helpfull commands 
 # Get help on a specific command
