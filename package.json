@@ -10,7 +10,7 @@
   },
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node loader.js",
     "lint": "eslint --cache ./nodebb .",
     "pretest": "npm run lint",
     "test": "istanbul cover node_modules/mocha/bin/_mocha -- -R dot",
