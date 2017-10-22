@@ -1,0 +1,13 @@
+{
+    "url": "http://localhost:4567",
+    "secret": "339c04c9-8695-4efc-af4d-24297bd876df",
+    "database": "mongo",
+    "port": 4567,
+    "mongo": {
+        "host": "52.176.157.95",
+        "port": "27017",
+        "username": "nodebb",
+        "password": "bitnami@52.176.157.95",
+        "database": "nodebb"
+    }
+}
