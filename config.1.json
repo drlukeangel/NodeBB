@@ -1,5 +1,5 @@
 {
-    "url": "http://APPSWITHOUTBOUNDARIES.COM",
+    "url": "http://localhost:4567",
     "secret": "339c04c9-8695-4efc-af4d-24297bd876df",
     "database": "mongo",
     "port": 4567,
