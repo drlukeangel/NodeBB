@@ -1,5 +1,5 @@
 {
-    "url": "http://localhost:4567",
+    "url": "http://nodebb-web-tpr-nodebb-8-19-1021jeer5gr4by7na.azurewebsites.net",
     "secret": "339c04c9-8695-4efc-af4d-24297bd876df",
     "database": "mongo",
     "port": 4567,
