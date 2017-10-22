@@ -46,11 +46,15 @@ RUN apt-get update \
 
 
 COPY sshd_config /etc/ssh/
+COPY init_container.sh /bin/
+RUN chmod 755 /bin/init_container.sh
+CMD ["/bin/init_container.sh"]
+
 # nodebb setup will ask you for connection information to a redis (default), mongodb then run the forum
 # nodebb upgrade is not included and might be desired
 CMD node app --setup && npm start
 
-EXPOSE 2222 80
+EXPOSE 2222 80 4567
 
 # docker run -d -p 4567:4567 -v $(PWD):/usr/src/app -w /usr/src/app nodebb
 
