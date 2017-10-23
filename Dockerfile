@@ -37,18 +37,18 @@ ENV NODE_ENV=production \
     daemon=false \
     silent=false
 
-# ------------------------
-# SSH Server support
-# ------------------------
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends openssh-server \
-    && echo "root:Docker!" | chpasswd
+# # ------------------------
+# # SSH Server support
+# # ------------------------
+# RUN apt-get update \
+#     && apt-get install -y --no-install-recommends openssh-server \
+#     && echo "root:Docker!" | chpasswd
 
 
-COPY sshd_config /etc/ssh/
-COPY init_container.sh /bin/
-RUN chmod 755 /bin/init_container.sh
-CMD ["/bin/init_container.sh"]
+# COPY sshd_config /etc/ssh/
+# COPY init_container.sh /bin/
+# RUN chmod 755 /bin/init_container.sh
+# CMD ["/bin/init_container.sh"]
 
 # nodebb setup will ask you for connection information to a redis (default), mongodb then run the forum
 # nodebb upgrade is not included and might be desired
