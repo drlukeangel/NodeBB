@@ -64,7 +64,7 @@ Blacklist.get = function (callback) {
 Blacklist.test = function (clientIp, callback) {
 	// Some handy test addresses
 	// clientIp = '2001:db8:85a3:0:0:8a2e:370:7334';	// IPv6
-	// clientIp = '127.0.15.1';	// IPv4
+	clientIp = '127.0.15.1';	// IPv4
 	var addr = ipaddr.parse(clientIp);
 
 	if (
@@ -134,43 +134,42 @@ Blacklist.validate = function (rules, callback) {
 	});
 
 	// Filter out invalid rules
-	rules = false;
-	// rules.filter(function (rule) {
-	// 	var addr;
-	// 	var isRange = false;
-	// 	try {
-	// 		addr = ipaddr.parse(rule);
-	// 	} catch (e) {
-	// 		// Do nothing
-	// 	}
+	rules = rules.filter(function (rule) {
+		var addr;
+		var isRange = false;
+		try {
+			addr = ipaddr.parse(rule);
+		} catch (e) {
+			// Do nothing
+		}
 
-	// 	try {
-	// 		addr = ipaddr.parseCIDR(rule);
-	// 		isRange = true;
-	// 	} catch (e) {
-	// 		// Do nothing
-	// 	}
+		try {
+			addr = ipaddr.parseCIDR(rule);
+			isRange = true;
+		} catch (e) {
+			// Do nothing
+		}
 
-	// 	if (!addr || whitelist.indexOf(rule) !== -1) {
-	// 		invalid.push(rule);
-	// 		return false;
-	// 	}
+		if (!addr || whitelist.indexOf(rule) !== -1) {
+			invalid.push(rule);
+			return false;
+		}
 
-	// 	if (!isRange) {
-	// 		if (addr.kind() === 'ipv4' && ipaddr.IPv4.isValid(rule)) {
-	// 			ipv4.push(rule);
-	// 			return true;
-	// 		}
-	// 		if (addr.kind() === 'ipv6' && ipaddr.IPv6.isValid(rule)) {
-	// 			ipv6.push(rule);
-	// 			return true;
-	// 		}
-	// 	} else {
-	// 		cidr.push(rule);
-	// 		return true;
-	// 	}
-	// 	return false;
-	// });
+		if (!isRange) {
+			if (addr.kind() === 'ipv4' && ipaddr.IPv4.isValid(rule)) {
+				ipv4.push(rule);
+				return true;
+			}
+			if (addr.kind() === 'ipv6' && ipaddr.IPv6.isValid(rule)) {
+				ipv6.push(rule);
+				return true;
+			}
+		} else {
+			cidr.push(rule);
+			return true;
+		}
+		return false;
+	});
 
 	callback(null, {
 		numRules: rules.length + invalid.length,
