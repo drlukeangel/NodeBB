@@ -8,7 +8,7 @@
     "type": "git",
     "url": "https://github.com/NodeBB/NodeBB/"
   },   
-  "main": "app.js",
+  "main": "loader.js",
   "scripts": {
     "start": "node app.js",
     "lint": "eslint --cache ./nodebb .",
